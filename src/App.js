@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { Dashboard } from './Dashboard';
+import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
+import { styled } from '@mui/material/styles';
+
+export const BorderLinearProgress = styled(LinearProgress)(({ theme, lineColor }) => ({
+  height: 12,
+  borderTopLeftRadius: 4,
+  borderBottomLeftRadius: 4,
+  [`&.${linearProgressClasses.colorPrimary}`]: {
+    backgroundColor: "hsl(221, 36%, 91%)"
+  },
+  [`& .${linearProgressClasses.bar}`]: {
+    //borderRadius: 5,
+    backgroundColor: lineColor
+  },
+}));
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Dashboard />
     </div>
   );
 }

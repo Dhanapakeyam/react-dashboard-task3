@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+.v1 {
+  margin: 50px 50px;
+  border-left: 5px solid green;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 130px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: hsl(228, 45%, 96%);
+  padding: 24px;
+  font-family: "Roboto", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.summary-box-container {
+  background-color: hsl(0deg, 0%, 100%);
+  /*background-color: aquamarine;
+  /* height: 100px;*/
+  width: 300px;
+  padding: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.summary-box-specs {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+
+}
+
+.summary-box-list {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width : 500px) {
+  .summary-box-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width : 1200px) {
+  .summary-box-list {
+    /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.summary-text {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-left: 10px;
+  margin-top: 40px;
+  font-weight: bolder;
+  margin-bottom: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.task-progress {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chart-area-title {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 65%;
+  color: #4e73df;
+  font-weight: bold;
+  margin-left: 50px;
+  margin-bottom: 2%;
+}
+
+.chart-area {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 50%;
+  margin-left: 50px;
+  margin-bottom: 5%;
+  column-gap: 125px;
+}
+
+.donut-chart-container {
+  height: 40%;
+  aspect-ratio: 1/1;
+}
+
+.project-track-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 30px;
+  margin-bottom: 5%;
+  column-gap: 125px;
+}
+
+.projects-track {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 50px;
+}
+
+.project-summary-box {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
+  color: grey;
+  font-size: small;
 }
